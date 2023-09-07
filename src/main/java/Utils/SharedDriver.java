@@ -30,7 +30,7 @@ public class SharedDriver {
                 options.addArguments("--remote-debugging-port=9222");
                 options.addArguments("--disable-gpu");
 
-
+                WebDriverManager.chromedriver().clearDriverCache().setup();
                 WebDriverManager.chromedriver().setup();
                 webDriver = new ChromeDriver();
                 break;
