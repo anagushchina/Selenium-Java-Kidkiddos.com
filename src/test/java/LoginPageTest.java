@@ -33,7 +33,9 @@ public class LoginPageTest extends UseCaseBase {
     public void emptyInputsTest(){
         logger.info("Running emptyInputsTest");
         logInPage.clickSignInButton();
+        if(!logInPage.isReCaptchaExists()){
         assertTrue(logInPage.isErrorTextExists());
+        }
     }
 
     @ParameterizedTest

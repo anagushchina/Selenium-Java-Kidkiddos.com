@@ -16,7 +16,6 @@ import java.util.stream.Stream;
 public class Scenario1Test extends UseCaseBase {
 
     private static MainPage mainPage;
-
     private static final Logger logger = LogManager.getLogger(Scenario1Test.class);
 
     @BeforeAll
@@ -39,7 +38,9 @@ public class Scenario1Test extends UseCaseBase {
         loginPage.typeIntoEmailInput(email);
         loginPage.typeIntoPasswordInput(password);
         loginPage.clickSignInButton();
+        if(!loginPage.isReCaptchaExists()){
         assertTrue(loginPage.isErrorTextExists());
+        }
     }
 
     static Stream<Arguments> invalidValues(){

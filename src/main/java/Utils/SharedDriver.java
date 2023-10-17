@@ -22,7 +22,6 @@ public class SharedDriver {
     protected static WebDriver getWebDriver(Browsers browser){
         switch (browser) {
             case CHROME:
-
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--no-sandbox");
                 options.addArguments("--disable-dev-shm-usage");
